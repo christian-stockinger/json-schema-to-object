@@ -1,15 +1,18 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@5.0.2
+  node: circleci/node@5.1.0
 
 jobs:
-  test: # this can be any name you choose
-    executor: node/default # use the default executor defined within the orb
+  test:
+    executor: node/default
+    parameters:
+      node-version:
+        type: string
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
+      - node/install:
+          node-version: << parameters.node-version >>
       - run:
           command: npm run test
           name: Run tests
@@ -30,7 +33,10 @@ jobs:
 workflows:
   build_test_deploy:
     jobs:
-      - test
+      - test:
+          matrix:
+              parameters:
+                node-version: ["16.20.2", "18.18.2", "20.9.0"]
       - publish:
           requires:
             - test
