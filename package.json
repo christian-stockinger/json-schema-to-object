@@ -1,6 +1,6 @@
 {
   "name": "json-schema-to-object",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple Node.js package that converts JSON schemas into JavaScript objects.",
   "main": "src/index.js",
   "scripts": {
