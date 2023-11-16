@@ -20,6 +20,9 @@
     "jsonschema",
     "mocks"
   ],
+  "files": [
+    "src/"
+  ],
   "author": "Christian Stockinger<mail@christian-stockinger.de>",
   "license": "MIT",
   "devDependencies": {
