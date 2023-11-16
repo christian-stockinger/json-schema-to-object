@@ -22,19 +22,23 @@ jobs:
       - run:
           command: npm run test
           name: Run tests
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - .
+
   publish:
     executor: node/default
+    parameters:
+      node-version:
+        type: string
     steps:
       - checkout
+      - node/install:
+          node-version: << parameters.node-version >>
+      - node/install-packages
       - run:
-          name: Publish to NPM
-          command: |
-            npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-            npm publish
+          name: Run semantic-release
+          command: npm run semantic-release
+          environment:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 workflows:
   build_test_deploy:
@@ -44,6 +48,7 @@ workflows:
               parameters:
                 node-version: ["16.20.2", "18.18.2", "20.9.0"]
       - publish:
+          node-version: "18.18.2"
           requires:
             - test
           filters:

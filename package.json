@@ -4,7 +4,16 @@
   "description": "A simple Node.js package that converts JSON schemas into JavaScript objects.",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "semantic-release": "semantic-release --branches main",
+    "release": "npm i && npm run semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christian-stockinger/json-schema-to-object.git"
+  },
+  "bugs": {
+    "url": "https://github.com/christian-stockinger/json-schema-to-object/issues"
   },
   "keywords": [
     "json",
@@ -15,6 +24,7 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.3.10",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "semantic-release": "^22.0.7"
   }
 }

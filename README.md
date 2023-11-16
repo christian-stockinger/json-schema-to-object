@@ -1,4 +1,10 @@
 # JSON Schema to Object Converter
+![npm](https://img.shields.io/npm/dt/json-schema-to-object)
+![GitHub License](https://img.shields.io/github/license/christian-stockinger/json-schema-to-object)
+![CircleCI](https://img.shields.io/circleci/build/github/christian-stockinger/json-schema-to-object)
+![npm version](https://img.shields.io/github/package-json/version/christian-stockinger/json-schema-to-object)
+
+
 
 A simple Node.js package that converts JSON schemas into JavaScript objects.
 
