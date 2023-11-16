@@ -8,6 +8,13 @@
     "semantic-release": "semantic-release --branches main",
     "release": "npm i && npm run semantic-release"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christian-stockinger/json-schema-to-object.git"
+  },
+  "bugs": {
+    "url": "https://github.com/christian-stockinger/json-schema-to-object/issues"
+  },
   "keywords": [
     "json",
     "jsonschema",
