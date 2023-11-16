@@ -36,9 +36,6 @@ jobs:
       - run:
           name: Run semantic-release
           command: npm run semantic-release
-          environment:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 workflows:
   build_test_deploy:
